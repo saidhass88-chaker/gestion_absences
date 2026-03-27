@@ -73,44 +73,44 @@ body{font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--ink)
 .pwt{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:15px;color:var(--muted);padding:2px}
 
 /* APP */
-#s-app{flex-direction:row}
-.sidebar{width:242px;background:var(--ink);color:#fff;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;flex-shrink:0;overflow-y:auto}
-.sl{padding:18px 16px 12px;border-bottom:1px solid rgba(255,255,255,.08)}
+#s-app{flex-direction:column}
+.sidebar{width:100%;background:var(--white);color:var(--ink);display:flex;flex-direction:row;position:sticky;top:0;height:60px;flex-shrink:0;overflow-y:visible;border-bottom:1px solid var(--border);align-items:center;padding:0;box-shadow:0 1px 3px rgba(15,25,35,.05)}
+.sl{padding:0 8px;border-bottom:none;border-right:1px solid var(--border);display:flex;align-items:center;gap:6px;height:60px;flex-shrink:0;min-width:fit-content}
 .sl-brand{display:flex;align-items:center;gap:9px}
-.sl-brand .ico{font-size:20px}
-.sl-brand h1{font-size:14px;font-weight:800;line-height:1.2}
-.sl-brand span{font-size:10px;color:rgba(255,255,255,.35)}
-.upill{margin-top:10px;background:rgba(255,255,255,.07);border-radius:9px;padding:8px 11px;display:flex;align-items:center;gap:8px}
-.uav{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0}
+.sl-brand .ico{font-size:16px}
+.sl-brand h1{font-size:13px;font-weight:800;line-height:1;color:var(--ink)}
+.sl-brand span{font-size:10px;color:var(--muted);display:none}
+.upill{margin-top:0;background:transparent;border-radius:6px;padding:4px 8px;display:flex;align-items:center;gap:6px;margin-left:auto;margin-right:8px;flex-shrink:0}
+.uav{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;background:var(--blue);color:#fff}
 .uinfo{flex:1;min-width:0}
-.uname{font-size:12px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.urole{font-size:10px;color:rgba(255,255,255,.4);margin-top:1px}
-.odot{width:6px;height:6px;background:#6ee7b7;border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+.uname{font-size:11px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100px}
+.urole{font-size:9px;color:var(--muted);margin-top:0;display:none}
+.odot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
-/* YEAR SELECTOR in sidebar */
-.year-selector{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.08)}
-.year-selector label{font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.6px;display:block;margin-bottom:5px}
-.year-select{width:100%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:7px 10px;font-family:inherit;font-size:12px;font-weight:700;color:#fff;cursor:pointer}
-.year-select:focus{outline:none;border-color:rgba(255,255,255,.4)}
-.year-select option{background:#1a2535;color:#fff}
+/* YEAR SELECTOR in navbar */
+.year-selector{padding:0 6px;border-bottom:none;display:flex;align-items:center;gap:4px;height:60px;border-right:1px solid var(--border);flex-shrink:0}
+.year-selector label{font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;display:none;margin-bottom:0;white-space:nowrap}
+.year-select{width:100px;background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:4px 6px;font-family:inherit;font-size:10px;font-weight:700;color:var(--ink2);cursor:pointer}
+.year-select:focus{outline:none;border-color:var(--blue)}
+.year-select option{background:var(--white);color:var(--ink)}
 .year-badge{display:inline-flex;align-items:center;gap:5px;margin-top:5px;font-size:10px;font-weight:600;padding:3px 8px;border-radius:20px}
-.year-badge.active{background:rgba(13,154,94,.2);color:#6ee7b7}
-.year-badge.archived{background:rgba(255,200,100,.15);color:#fbbf24}
+.year-badge.active{background:var(--green-light);color:var(--green)}
+.year-badge.archived{background:var(--gold-light);color:var(--gold)}
 
-.sn{flex:1;padding:8px 0;overflow-y:auto}
-.ns{padding:7px 16px 2px;font-size:10px;font-weight:700;color:rgba(255,255,255,.22);text-transform:uppercase;letter-spacing:.8px}
-.ni{display:flex;align-items:center;gap:9px;padding:9px 16px;cursor:pointer;font-size:13px;font-weight:500;color:rgba(255,255,255,.6);transition:all .15s;border-left:3px solid transparent}
-.ni:hover{background:rgba(255,255,255,.06);color:#fff}
-.ni.active{background:rgba(26,110,245,.2);color:#fff;border-left-color:var(--blue)}
-.ni.adm{color:rgba(255,200,100,.7)}
-.ni.adm:hover,.ni.adm.active{background:rgba(255,200,100,.1);color:#fbbf24;border-left-color:#f59e0b}
-.sstat{padding:10px 12px;border-top:1px solid rgba(255,255,255,.08)}
+.sn{flex:1;padding:0;overflow-y:visible;display:flex;align-items:center;gap:0;overflow-x:auto;height:60px}
+.ns{display:none}
+.ni{display:flex;align-items:center;gap:4px;padding:0 10px;cursor:pointer;font-size:11px;font-weight:600;color:var(--muted);transition:all .15s;border-left:none;border-bottom:3px solid transparent;height:60px;white-space:nowrap}
+.ni:hover{background:var(--surface);color:var(--ink2)}
+.ni.active{background:var(--blue-light);color:var(--blue);border-bottom-color:var(--blue)}
+.ni.adm{color:var(--orange)}
+.ni.adm:hover,.ni.adm.active{background:var(--orange-light);color:var(--orange);border-bottom-color:var(--orange)}
+.sstat{padding:0;border-top:none;display:none}
 .sp{background:rgba(255,255,255,.06);border-radius:7px;padding:7px 11px;margin-bottom:6px}
 .sp .lbl{font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.5px}
 .sp .val{font-size:18px;font-weight:700;color:#fff;font-family:'DM Mono',monospace}
-.lout{margin:10px 12px 12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);border-radius:8px;padding:8px;font-size:12px;font-weight:600;font-family:inherit;cursor:pointer;width:calc(100% - 24px);transition:all .15s;display:flex;align-items:center;justify-content:center;gap:7px}
-.lout:hover{background:rgba(214,48,49,.15);border-color:rgba(214,48,49,.3);color:#f87171}
+.lout{margin:0;background:var(--red-light);border:1px solid #f5b8b5;color:var(--red);border-radius:6px;padding:6px 10px;font-size:11px;font-weight:600;font-family:inherit;cursor:pointer;width:auto;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:5px;margin-right:8px;flex-shrink:0}
+.lout:hover{background:#fbd7d4;border-color:#f5a39e}
 
 /* ARCHIVE BANNER */
 .arch-banner{background:var(--gold-light);border:1.5px solid #fcd34d;border-radius:10px;padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
@@ -119,7 +119,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--ink)
 
 /* MAIN */
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden}
-.topbar{background:var(--white);border-bottom:1px solid var(--border);padding:0 24px;height:54px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.topbar{display:none}
 .topbar h2{font-size:15px;font-weight:800}
 .syni{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
 .syd{width:8px;height:8px;border-radius:50%;background:var(--green)}
@@ -316,18 +316,18 @@ tr:hover td{background:#fafcff}
       <div id="year-status-badge"></div>
     </div>
     <nav class="sn">
-      <div class="ns">Étudiants</div>
-      <div class="ni active" data-page="etudiants" onclick="SP('etudiants',this)"><span>👥</span> Liste & Niveaux</div>
-      <div class="ni" data-page="groupes" onclick="SP('groupes',this)"><span>🗂️</span> Gestion groupes</div>
-      <div class="ni" data-page="import" onclick="SP('import',this)"><span>📥</span> Importer Excel</div>
+      <div class="ns adms">Étudiants</div>
+      <div class="ni adms active" data-page="etudiants" onclick="SP('etudiants',this)"><span>👥</span> Liste & Niveaux</div>
+      <div class="ni adms" data-page="groupes" onclick="SP('groupes',this)"><span>🗂️</span> Gestion groupes</div>
+      <div class="ni adms" data-page="import" onclick="SP('import',this)"><span>📥</span> Importer Excel</div>
       <div class="ns">Cours</div>
       <div class="ni" data-page="seances" onclick="SP('seances',this)"><span>📅</span> Séances</div>
       <div class="ni" data-page="presences" onclick="SP('presences',this)"><span>✏️</span> Marquer présences</div>
       <div class="ns">Rapports</div>
       <div class="ni" data-page="recap" onclick="SP('recap',this)"><span>📊</span> Récapitulatif</div>
       <div class="ni" data-page="export" onclick="SP('export',this)"><span>📤</span> Export individuel</div>
-      <div class="ns">Historique</div>
-      <div class="ni" data-page="annees" onclick="SP('annees',this)"><span>🗓️</span> Années scolaires</div>
+      <div class="ns adms">Historique</div>
+      <div class="ni adms" data-page="annees" onclick="SP('annees',this)"><span>🗓️</span> Années scolaires</div>
       <div class="ns adms" style="display:none">Administration</div>
       <div class="ni adm adms" data-page="admin" onclick="SP('admin',this)" style="display:none"><span>⚙️</span> Enseignants</div>
     </nav>
@@ -697,6 +697,7 @@ async function showApp(){
   const av=document.getElementById('uav');av.style.background=curRole==='admin'?'#b45309':NC[0].c;av.textContent=(curName||'?')[0].toUpperCase();
   document.getElementById('uname').textContent=curName||'Utilisateur';
   document.getElementById('urole').textContent=curRole==='admin'?'Administrateur':'Enseignant';
+  // RESTRICTION ENSEIGNANTS: Masquer les modules admin
   document.querySelectorAll('.adms').forEach(el=>el.style.display=curRole==='admin'?'':'none');
   await loadYears();
   if(curRole==='admin')loadT();
